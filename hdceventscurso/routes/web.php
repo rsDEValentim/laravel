@@ -18,17 +18,6 @@ use App\Http\Controllers\EventController;
 Route::get('/', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create']);
 
-Route::get('/contato', function () {
-    return view('contato');
-});
-
-Route::get('/produto', function () {
-
-    $busca = request('search');
-
-    return view('produto', ['busca' => $busca]);
-});
-
-Route::get('/teste_id/{id?}', function ($id = null) {
-    return view('teste_id', ['id' => $id]);
+Route::get('/contact', function () {
+    return view('contact');
 });
