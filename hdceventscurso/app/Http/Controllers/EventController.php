@@ -31,11 +31,11 @@ class EventController extends Controller
         $event->description = $request->description;
 
         //Image Upload
-        if($request ->hasfile('image') && $request->file('image')->inValid()){
+        if($request ->hasfile('image') ){
             
-            $requestImage = $request->Image;
+            $requestImage = $request->image;
             
-            $extesion = $requestImage->extesion();
+            $extesion = $requestImage->extension();
 
             $imageName  =md5($requestImage->getClientOriginalName(). strtotime("now")).".".$extesion;
 
