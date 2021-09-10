@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CategoriaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,5 +35,22 @@ Route::get('/produto', [ProdutoController::class,'index'])->name('produto.index'
 Route::post('/produto', [ProdutoController::class,'store'])->name('produto.store');
 
 Route::post('/save',[FormController::class, 'save']);
+
+
+// categorias
+
+Route::get('/categoria', [CategoriaController::class,'index'])->name('categoria.index'); // lista as categorias
+
+Route::get('/categoria/new', [CategoriaController::class,'create'])->name('categoria.new'); // retorna a view de formulario
+
+Route::post('/categoria', [CategoriaController::class,'store'])->name('categoria.store'); //rota que vai receber os dados do formulario
+
+Route::get('/categoria/edit/{id}', [CategoriaController::class,'edit'])->name('categoria.edit');
+
+Route::post('/categoria/update/{id}', [CategoriaController::class,'update'])->name('categoria.update');
+
+
+
+
 
 

@@ -26,7 +26,7 @@ class ProdutoController extends Controller
     }
 
     public function edit($id){
-        $produto = Produto::findorFail($id);
+        $produto = Produto::findOrFail($id);
         return view('frmProduto',[
             'produto'=>$produto
         ]);
