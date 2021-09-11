@@ -3,21 +3,6 @@
   font-family: 'Roboto';
 }
 
-.fontvermelha{
-  color: red;
+h1 {
+  text-align: center;
 }
-
-.minhadiv {
-  border: 10px black solid;
-    width: 80%;
-    background-color: blue;
-    padding-left: 10px;
-    margin-left: 20px;
-    
-}
-
-form{
-  margin-top: 10px;
-  padding-top: 5px;
-}
-

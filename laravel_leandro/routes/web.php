@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\MarcaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,6 +49,19 @@ Route::post('/categoria', [CategoriaController::class,'store'])->name('categoria
 Route::get('/categoria/edit/{id}', [CategoriaController::class,'edit'])->name('categoria.edit');
 
 Route::post('/categoria/update/{id}', [CategoriaController::class,'update'])->name('categoria.update');
+
+
+//marcas
+
+Route::get('/marca', [MarcaController::class,'index'])->name('marca.index');
+
+Route::get('/marca/new', [MarcaController::class,'create'])->name('marca.new');
+
+Route::post('/marca', [MarcaController::class,'store'])->name('marca.store');
+
+Route::get('/marca/edit/{id}', [MarcaController::class,'edit'])->name('marca.edit');
+
+Route::post('/marca/update/{id}', [MarcaController::class,'update'])->name('marca.update');
 
 
 
