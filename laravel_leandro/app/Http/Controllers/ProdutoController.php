@@ -6,17 +6,24 @@ use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Http\Requests\ProdutoStore;
 use App\Http\Requests\ProdutoUpdate;
+use App\Models\Categoria;
+use App\Models\Marca;
 
 class ProdutoController extends Controller
 {
     public function index(){
         return view('produto', [
-            'produtos' => Produto::all()
+            'produtos' => Produto::with('categoria')->get(),
+            'produtos' => Produto::with('marca')->get()
         ]);
     }
 
     public function create(){
-        return view('frmProduto');
+        return view('frmProduto', [
+            'categorias' => Categoria::all(),
+            'marcas' => Marca::all()
+
+        ]);
     }
 
     public function store(ProdutoStore $request){
@@ -28,7 +35,9 @@ class ProdutoController extends Controller
     public function edit($id){
         $produto = Produto::findOrFail($id);
         return view('frmProduto',[
-            'produto'=>$produto
+            'produto'=>$produto,
+            'categorias' => Categoria::all(),
+            'marcas' => Marca::all()
         ]);
     }
 

@@ -34,7 +34,7 @@ class MarcaController extends Controller
     }
 
     public function update($id,MarcaUpdate $request){
-        $mac = marca::findOrFail($id);
+        $mac = Marca::findOrFail($id);
         $mac->update($request->validated());
         return redirect()->route('marca.index');
     }

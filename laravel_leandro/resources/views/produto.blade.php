@@ -10,6 +10,8 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nome</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Marca</th>
         <th scope="col">Preço</th>
         <th></th>
       </tr>
@@ -19,6 +21,8 @@
             <tr>
                 <th scope="row">{{ $produto->id }}</th>
                 <td>{{ $produto->nome }}</td>
+                <td>{{ $produto->categoria->categoria}}</td>
+                <td>{{ $produto->marca}}</td>
                 <td>{{ $produto->preco}}</td>
                 <td><a href="{{route('produto.edit',$produto->id)}}" class="btn btn-info">Editar</a>
           </tr>

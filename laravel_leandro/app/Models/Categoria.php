@@ -14,4 +14,8 @@ class Categoria extends Model
     protected $fillable = [
         'categoria'
     ];
+
+    public function produtos(){
+        return $this->hasMany(Produto::class, 'categorias_id_categoria');
+    }
 }

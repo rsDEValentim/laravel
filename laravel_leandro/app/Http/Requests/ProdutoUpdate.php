@@ -26,7 +26,9 @@ class ProdutoUpdate extends FormRequest
         return [
             'nome' =>'required|min:3|max:191',
             'descricao'=>'required',
-            'preco'=>'required|numeric|min:0.01'
+            'preco'=>'required|numeric|min:0.01',
+            'categorias_id_categoria' => 'required',
+            'marcas_id' => 'required|min:3|max:191'
         ];
     }
 }

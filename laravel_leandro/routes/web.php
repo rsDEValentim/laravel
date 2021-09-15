@@ -16,6 +16,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\AnimalController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -62,6 +63,23 @@ Route::post('/marca', [MarcaController::class,'store'])->name('marca.store');
 Route::get('/marca/edit/{id}', [MarcaController::class,'edit'])->name('marca.edit');
 
 Route::post('/marca/update/{id}', [MarcaController::class,'update'])->name('marca.update');
+
+//animais
+
+Route::get('/animal', [AnimalController::class,'index'])->name('animal.index');
+
+Route::get('/animal/new', [AnimalController::class,'create'])->name('animal.new');
+
+Route::post('/animal', [AnimalController::class,'store'])->name('animal.store');
+
+Route::get('/animal/edit/{id}', [AnimalController::class,'edit'])->name('animal.edit');
+
+Route::post('/animal/update/{id}', [AnimalController::class,'update'])->name('animal.update');
+
+
+
+
+
 
 
 

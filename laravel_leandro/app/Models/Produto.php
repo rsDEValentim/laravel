@@ -15,6 +15,18 @@ class Produto extends Model
     protected $fillable = [
         'nome',
         'descricao',
-        'preco'
+        'preco',
+        'categorias_id_categoria',
+        'marcas_id'
     ];
+
+    public function categoria(){
+
+        return $this->belongsTo(Categoria::class, 'categorias_id_categoria');
+    }
+
+    public function marca(){
+
+        return $this->belongsTo(Marca::class, 'marcas_id');
+    }
 }
