@@ -42,11 +42,11 @@
 
 
                 <div class="mb-3">
-                    <label for="marca_id" class="form-label">Marca</label>
-                    <select class="form-select" name="marca_id" aria-label="Default select example">
+                    <label for="marcas_id" class="form-label">Marcas</label>
+                    <input type="text" name="marcas_id" value="{{old('marcas_id',$produto->marcas_id ?? '')}}" class="form-control" id="marcas_id" >
                         @foreach ($marcas as $marca )
                             @isset($produto)
-                                @if($produto->marca->id == $marca->id)
+                                @if($produto->marca->marca_id == $marca->id)
                                     <option selected value="{{$marca->id}}">{{$marca->marca}}</option>
                                 @else
                                     <option value="{{$marca->id}}">{{$marca->marca}}</option>
