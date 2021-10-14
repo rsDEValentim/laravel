@@ -13,10 +13,9 @@ class ProdutoController extends Controller
 {
     public function index(){
         return view('produto', [
-            'produtos' => Produto::with('categoria')->get(),
-            'produtos' => Produto::with('marca')->get()
+            'produtos' => Produto::with('categoria', 'marca')->get(),
         ]);
-    }
+    }   
 
     public function create(){
         return view('frmProduto', [

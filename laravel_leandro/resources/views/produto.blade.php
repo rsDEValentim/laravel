@@ -22,7 +22,7 @@
                 <th scope="row">{{ $produto->id }}</th>
                 <td>{{ $produto->nome }}</td>
                 <td>{{ $produto->categoria->categoria}}</td>
-                <td>{{ $produto->marca}}</td>
+                <td>{{ $produto->marca->marca}}</td>
                 <td>{{ $produto->preco}}</td>
                 <td><a href="{{route('produto.edit',$produto->id)}}" class="btn btn-info">Editar</a>
           </tr>

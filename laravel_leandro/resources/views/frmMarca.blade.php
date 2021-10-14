@@ -20,7 +20,7 @@
 
       <div class="mb-3">
         <label for="nome" class="form-label">Nome da Marca</label>
-        <input type="text" name="marca" value="{{old('marca',$marca->marca ?? '')}}"  class="form-control" placeholder="Ex.: Nike">
+        <input type="text" name="marca" value="{{old('marca',   $marca->marca ?? '')}}"  class="form-control" placeholder="Ex.: Nike">
       
 
       @foreach ($errors->get('marca') as $message) 

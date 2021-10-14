@@ -43,11 +43,11 @@
 
                 <div class="mb-3">
                     <label for="marcas_id" class="form-label">Marcas</label>
-                    <input type="text" name="marcas_id" value="{{old('marcas_id',$produto->marcas_id ?? '')}}" class="form-control" id="marcas_id" >
+                    <select name="marcas_id" value="{{old('marcas_id',$produto->marca ?? '')}}" class="form-control" id="marcas_id" placeholder="Ex.: Nike" >
                         @foreach ($marcas as $marca )
                             @isset($produto)
-                                @if($produto->marca->marca_id == $marca->id)
-                                    <option selected value="{{$marca->id}}">{{$marca->marca}}</option>
+                                @if($produto->id == $marca->id)
+                                    <option     selected value="{{$marca->id}}">{{$marca->marca}}</option>
                                 @else
                                     <option value="{{$marca->id}}">{{$marca->marca}}</option>
                                 @endif

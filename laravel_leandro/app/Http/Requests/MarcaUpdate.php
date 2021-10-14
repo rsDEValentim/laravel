@@ -24,7 +24,7 @@ class MarcaUpdate extends FormRequest
     public function rules()
     {
         return [
-            'marca'=> 'required|min:3|max:191'
+            'marca'=> 'required'
         ];
     }
 }

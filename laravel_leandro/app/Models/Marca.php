@@ -13,7 +13,7 @@ class Marca extends Model
         'marca'
     ];
 
-    public function marcas(){
-        return $this->hasMany(Marca::class, 'marcas_id');
+    public function produto(){
+        return $this->hasMany(Produto::class, 'marcas_id');
     }
 }
